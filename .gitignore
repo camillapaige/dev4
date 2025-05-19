@@ -1,0 +1,11 @@
+#attachments folder
+attachments/
+
+#attachments zip
+attachments.zip
+
+#skip log
+skipped_projects.log
+
+#skip api key stored in .env
+.env
