@@ -1,0 +1,164 @@
+---
+title: "Tick ACS 2023 5-year variables of interest"
+format: html
+editor: visual
+---
+
+## Variables of interest:
+
+These can be accessed via:
+
+load_variables(2023, "acs5", cache = TRUE)
+
+You can use the View() function in rstudio to search
+
+### Income:
+
+|  |  |  |  |
+|----|----|----|----|
+| B19001_001 | Estimate!!Total: | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_002 | Estimate!!Total:!!Less than \$10,000 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_003 | Estimate!!Total:!!\$10,000 to \$14,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_004 | Estimate!!Total:!!\$15,000 to \$19,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_005 | Estimate!!Total:!!\$20,000 to \$24,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_006 | Estimate!!Total:!!\$25,000 to \$29,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_007 | Estimate!!Total:!!\$30,000 to \$34,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_008 | Estimate!!Total:!!\$35,000 to \$39,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_009 | Estimate!!Total:!!\$40,000 to \$44,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_010 | Estimate!!Total:!!\$45,000 to \$49,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_011 | Estimate!!Total:!!\$50,000 to \$59,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_012 | Estimate!!Total:!!\$60,000 to \$74,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_013 | Estimate!!Total:!!\$75,000 to \$99,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_014 | Estimate!!Total:!!\$100,000 to \$124,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_015 | Estimate!!Total:!!\$125,000 to \$149,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_016 | Estimate!!Total:!!\$150,000 to \$199,999 | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19001_017 | Estimate!!Total:!!\$200,000 or more | Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19013_001 | Estimate!!Median household income in the past 12 months (in 2023 inflation-adjusted dollars) | Median Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+| B19049_001 | Estimate!!Median household income in the past 12 months (in 2023 inflation-adjusted dollars) --!!Total: | Median Household Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) by Age of Householder | block group |
+| B19313_001 | Estimate!!Aggregate income in the past 12 months (in 2023 inflation-adjusted dollars) | Aggregate Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars) | block group |
+
+Total pop:
+
+|            |                 |                  |             |
+|------------|-----------------|------------------|-------------|
+| B01003_001 | Estimate!!Total | Total Population | block group |
+
+### sex and age cross tabs:
+
+|  |  |  |  |
+|----|----|----|----|
+| B01001_001 | Estimate!!Total: | Sex by Age | block group |
+| B01001_002 | Estimate!!Total:!!Male: | Sex by Age | block group |
+| B01001_003 | Estimate!!Total:!!Male:!!Under 5 years | Sex by Age | block group |
+| B01001_004 | Estimate!!Total:!!Male:!!5 to 9 years | Sex by Age | block group |
+| B01001_005 | Estimate!!Total:!!Male:!!10 to 14 years | Sex by Age | block group |
+| B01001_006 | Estimate!!Total:!!Male:!!15 to 17 years | Sex by Age | block group |
+| B01001_007 | Estimate!!Total:!!Male:!!18 and 19 years | Sex by Age | block group |
+| B01001_008 | Estimate!!Total:!!Male:!!20 years | Sex by Age | block group |
+| B01001_009 | Estimate!!Total:!!Male:!!21 years | Sex by Age | block group |
+| B01001_010 | Estimate!!Total:!!Male:!!22 to 24 years | Sex by Age | block group |
+| B01001_011 | Estimate!!Total:!!Male:!!25 to 29 years | Sex by Age | block group |
+| B01001_012 | Estimate!!Total:!!Male:!!30 to 34 years | Sex by Age | block group |
+| B01001_013 | Estimate!!Total:!!Male:!!35 to 39 years | Sex by Age | block group |
+| B01001_014 | Estimate!!Total:!!Male:!!40 to 44 years | Sex by Age | block group |
+| B01001_015 | Estimate!!Total:!!Male:!!45 to 49 years | Sex by Age | block group |
+| B01001_016 | Estimate!!Total:!!Male:!!50 to 54 years | Sex by Age | block group |
+| B01001_017 | Estimate!!Total:!!Male:!!55 to 59 years | Sex by Age | block group |
+| B01001_018 | Estimate!!Total:!!Male:!!60 and 61 years | Sex by Age | block group |
+| B01001_019 | Estimate!!Total:!!Male:!!62 to 64 years | Sex by Age | block group |
+| B01001_020 | Estimate!!Total:!!Male:!!65 and 66 years | Sex by Age | block group |
+| B01001_021 | Estimate!!Total:!!Male:!!67 to 69 years | Sex by Age | block group |
+| B01001_022 | Estimate!!Total:!!Male:!!70 to 74 years | Sex by Age | block group |
+| B01001_023 | Estimate!!Total:!!Male:!!75 to 79 years | Sex by Age | block group |
+| B01001_024 | Estimate!!Total:!!Male:!!80 to 84 years | Sex by Age | block group |
+| B01001_025 | Estimate!!Total:!!Male:!!85 years and over | Sex by Age | block group |
+| B01001_026 | Estimate!!Total:!!Female: | Sex by Age | block group |
+| B01001_027 | Estimate!!Total:!!Female:!!Under 5 years | Sex by Age | block group |
+| B01001_028 | Estimate!!Total:!!Female:!!5 to 9 years | Sex by Age | block group |
+| B01001_029 | Estimate!!Total:!!Female:!!10 to 14 years | Sex by Age | block group |
+| B01001_030 | Estimate!!Total:!!Female:!!15 to 17 years | Sex by Age | block group |
+| B01001_031 | Estimate!!Total:!!Female:!!18 and 19 years | Sex by Age | block group |
+| B01001_032 | Estimate!!Total:!!Female:!!20 years | Sex by Age | block group |
+| B01001_033 | Estimate!!Total:!!Female:!!21 years | Sex by Age | block group |
+| B01001_034 | Estimate!!Total:!!Female:!!22 to 24 years | Sex by Age | block group |
+| B01001_035 | Estimate!!Total:!!Female:!!25 to 29 years | Sex by Age | block group |
+| B01001_036 | Estimate!!Total:!!Female:!!30 to 34 years | Sex by Age | block group |
+| B01001_037 | Estimate!!Total:!!Female:!!35 to 39 years | Sex by Age | block group |
+| B01001_038 | Estimate!!Total:!!Female:!!40 to 44 years | Sex by Age | block group |
+| B01001_039 | Estimate!!Total:!!Female:!!45 to 49 years | Sex by Age | block group |
+| B01001_040 | Estimate!!Total:!!Female:!!50 to 54 years | Sex by Age | block group |
+| B01001_041 | Estimate!!Total:!!Female:!!55 to 59 years | Sex by Age | block group |
+| B01001_042 | Estimate!!Total:!!Female:!!60 and 61 years | Sex by Age | block group |
+| B01001_043 | Estimate!!Total:!!Female:!!62 to 64 years | Sex by Age | block group |
+| B01001_044 | Estimate!!Total:!!Female:!!65 and 66 years | Sex by Age | block group |
+| B01001_045 | Estimate!!Total:!!Female:!!67 to 69 years | Sex by Age | block group |
+| B01001_046 | Estimate!!Total:!!Female:!!70 to 74 years | Sex by Age | block group |
+| B01001_047 | Estimate!!Total:!!Female:!!75 to 79 years | Sex by Age | block group |
+| B01001_048 | Estimate!!Total:!!Female:!!80 to 84 years | Sex by Age | block group |
+| B01001_049 | Estimate!!Total:!!Female:!!85 years and over | Sex by Age | block group |
+
+Race vars:
+
+|  |  |  |  |
+|----|----|----|----|
+| B02001_001 | Estimate!!Total: | Race | block group |
+| B02001_002 | Estimate!!Total:!!White alone | Race | block group |
+| B02001_003 | Estimate!!Total:!!Black or African American alone | Race | block group |
+| B02001_004 | Estimate!!Total:!!American Indian and Alaska Native alone | Race | block group |
+| B02001_005 | Estimate!!Total:!!Asian alone | Race | block group |
+| B02001_006 | Estimate!!Total:!!Native Hawaiian and Other Pacific Islander alone | Race | block group |
+| B02001_007 | Estimate!!Total:!!Some Other Race alone | Race | block group |
+| B02001_008 | Estimate!!Total:!!Two or More Races: | Race | block group |
+
+Hispanic or Latino vars:
+
+|  |  |  |  |
+|----|----|----|----|
+| B03002_012 | Estimate!!Total:!!Hispanic or Latino: | Hispanic or Latino Origin by Race | block group |
+| B03002_001 | Estimate!!Total: | Hispanic or Latino Origin by Race | block group |
+| B03002_002 | Estimate!!Total:!!Not Hispanic or Latino: | Hispanic or Latino Origin by Race | block group |
+
+educational attainment:
+
+|  |  |  |  |
+|----|----|----|----|
+| B15003_001 | Estimate!!Total: | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_002 | Estimate!!Total:!!No schooling completed | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_003 | Estimate!!Total:!!Nursery school | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_004 | Estimate!!Total:!!Kindergarten | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_005 | Estimate!!Total:!!1st grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_006 | Estimate!!Total:!!2nd grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_007 | Estimate!!Total:!!3rd grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_008 | Estimate!!Total:!!4th grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_009 | Estimate!!Total:!!5th grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_010 | Estimate!!Total:!!6th grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_011 | Estimate!!Total:!!7th grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_012 | Estimate!!Total:!!8th grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_013 | Estimate!!Total:!!9th grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_014 | Estimate!!Total:!!10th grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_015 | Estimate!!Total:!!11th grade | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_016 | Estimate!!Total:!!12th grade, no diploma | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_017 | Estimate!!Total:!!Regular high school diploma | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_018 | Estimate!!Total:!!GED or alternative credential | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_019 | Estimate!!Total:!!Some college, less than 1 year | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_020 | Estimate!!Total:!!Some college, 1 or more years, no degree | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_021 | Estimate!!Total:!!Associate's degree | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_022 | Estimate!!Total:!!Bachelor's degree | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_023 | Estimate!!Total:!!Master's degree | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_024 | Estimate!!Total:!!Professional school degree | Educational Attainment for the Population 25 Years and Over | block group |
+| B15003_025 | Estimate!!Total:!!Doctorate degree | Educational Attainment for the Population 25 Years and Over | block group |
+
+### haven't found mean income
+
+option: **\
+B19081** Mean Household Income of Quintiles,
+
+gives mean household income quintile values
+
+OR calculate mean
+
+Total households (added to the population variable)
+
+|  |  |  |  |
+|----|----|----|----|
+| B11001_001 | Estimate!!Total: | Household Type (Including Living Alone) | block group |

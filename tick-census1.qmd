@@ -1,0 +1,154 @@
+---
+title: "tick-census-code"
+author: "Camilla Green"
+format: html
+editor: visual
+---
+
+set your census api key if its not saved locally
+
+this chunk loads packages and sets the counties in the AOI
+
+```{r}
+#load packages
+#set working directory
+
+library(tidycensus)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+#census_api_key("", install = TRUE)
+
+ny_counties <- c("Bronx","Kings", "Queens", "Nassau", "Suffolk")
+
+ma_counties <- c("Suffolk", "Bristol","Middlesex", "Norfolk", "Plymouth")
+
+```
+
+load the variables of interest. you can search for others using
+
+acs23_vars \<- load_variables(2023, "acs5", cache = TRUE)
+
+View variables using View(variables) in Rstudio. You can use the interactive search box to search for variables of interest.
+
+see codebook for variable codes: "tick_census_var.qmd"
+
+```{r}
+income_vars <- c("B19001_001", "B19001_002", "B19001_003", "B19001_004", "B19001_005", "B19001_006", "B19001_007", "B19001_008", "B19001_009", "B19001_010", "B19001_011", "B19001_012", "B19001_013", "B19001_014", "B19001_015", "B19001_016", "B19001_017", "B19013_001", "B19049_001", "B19313_001")
+
+pop_vars <- c("B01003_001", "B11001_001")
+
+xtab_vars <- c("B01001_001","B01001_002","B01001_003","B01001_004","B01001_005","B01001_006","B01001_007","B01001_008","B01001_009","B01001_010","B01001_011","B01001_012","B01001_013","B01001_014","B01001_015","B01001_016","B01001_017","B01001_018","B01001_019","B01001_020","B01001_021","B01001_022","B01001_023","B01001_024","B01001_025","B01001_026","B01001_027","B01001_028","B01001_029","B01001_030","B01001_031","B01001_032","B01001_033","B01001_034","B01001_035","B01001_036","B01001_037","B01001_038","B01001_039","B01001_040","B01001_041","B01001_042","B01001_043","B01001_044","B01001_045","B01001_046","B01001_047","B01001_048","B01001_049")
+
+race_vars <- c("B02001_001", "B02001_002", "B02001_003", "B02001_004", "B02001_005", "B02001_006", "B02001_007", "B02001_008")
+
+hisp_vars <- c("B01003_001","B03002_012","B03002_001","B03002_002")
+
+income_vars <- c("B19001_001", "B19001_002", "B19001_003", "B19001_004", "B19001_005", "B19001_006", "B19001_007", "B19001_008", "B19001_009", "B19001_010", "B19001_011", "B19001_012", "B19001_013", "B19001_014", "B19001_015", "B19001_016", "B19001_017", "B19013_001", "B19049_001", "B19313_001")
+
+pop_vars <- c("B01003_001", "B11001_001")
+
+xtab_vars <- c("B01001_001","B01001_002","B01001_003","B01001_004","B01001_005","B01001_006","B01001_007","B01001_008","B01001_009","B01001_010","B01001_011","B01001_012","B01001_013","B01001_014","B01001_015","B01001_016","B01001_017","B01001_018","B01001_019","B01001_020","B01001_021","B01001_022","B01001_023","B01001_024","B01001_025","B01001_026","B01001_027","B01001_028","B01001_029","B01001_030","B01001_031","B01001_032","B01001_033","B01001_034","B01001_035","B01001_036","B01001_037","B01001_038","B01001_039","B01001_040","B01001_041","B01001_042","B01001_043","B01001_044","B01001_045","B01001_046","B01001_047","B01001_048","B01001_049")
+
+race_vars <- c("B02001_001", "B02001_002", "B02001_003", "B02001_004", "B02001_005", "B02001_006", "B02001_007", "B02001_008")
+
+hisp_vars <- c("B01003_001","B03002_012","B03002_001","B03002_002", "B03002_012")
+
+```
+
+```{r}
+# Initialize an empty data frame to store results
+ny_data <- NULL
+
+# Loop through each variable list and get data
+for (i in seq_along(variable_lists)) {
+  vars <- variable_lists[[i]]
+
+  ny_dataset <- get_acs(
+    geography = "block group",
+    variables = vars,
+    year = 2023,
+    output = "wide",
+    survey = "acs5",
+    state = "36",
+    county = ny_counties,
+    geometry = TRUE
+  )
+
+  if (is.null(ny_data)) {
+    ny_data <- ny_dataset
+  } else {
+    # Convert to tibble to strip geometry before join
+    ny_dataset_clean <- ny_dataset %>%
+      st_drop_geometry() %>%         # drop geometry column
+      select(-NAME)                  # optionally drop NAME too
+
+    # Join clean data by GEOID
+    ny_data <- left_join(ny_data, ny_dataset_clean, by = "GEOID")
+  }
+}
+```
+
+```{r}
+
+# Initialize an empty sf object to store results
+ma_data <- NULL
+
+# Loop through each variable list and get data
+for (i in seq_along(variable_lists)) {
+  vars <- variable_lists[[i]]  # Get the current list of variables
+
+  ma_dataset <- get_acs(
+    geography = "block group", 
+    variables = vars, 
+    year = 2023, 
+    output = "wide",  
+    survey = "acs5", 
+    state = "25",  
+    county = ma_counties,
+    geometry = TRUE
+  )
+  
+  if (is.null(ma_data)) {
+    ma_data <- ma_dataset
+  } else {
+    # Remove geometry and optional duplicate NAME before joining
+    ma_dataset_clean <- ma_dataset %>%
+      st_drop_geometry() %>%
+      select(-NAME)
+
+    # Join to master dataset by GEOID
+    ma_data <- left_join(ma_data, ma_dataset_clean, by = "GEOID")
+  }
+}
+```
+
+```{r}
+# calculate percentages for each of the race variables 
+calculate_percentages <- function(data) {
+  data %>%
+    mutate(
+      perc_white = 100 * (B02001_002E / B02001_001E),
+      perc_black = 100 * (B02001_003E / B02001_001E),
+      perc_amerindian = 100 * (B02001_004E / B02001_001E),
+      perc_asian = 100 * (B02001_005E / B02001_001E),
+      perc_nhpi = 100 * (B02001_006E / B02001_001E),
+      perc_other = 100 * (B02001_007E / B02001_001E),
+      perc_two_or_more = 100 * (B02001_008E / B02001_001E),
+    #  perc_hispanic = 100 * (B03002_012E / B03002_001E),
+  #    perc_not_hispanic = 100 * (B03002_002E / B03002_001E)
+    )
+}
+
+# Apply to New York and Massachusetts data
+ny_data <- calculate_percentages(ny_data)
+ma_data <- calculate_percentages(ma_data)
+```
+
+```{r}
+# Write to GeoPackage
+st_write(ny_data, "ny_blockgroups.gpkg", layer = "ny_data", delete_layer = TRUE)
+st_write(ma_data, "ma_blockgroups.gpkg", layer = "ma_data", delete_layer = TRUE)
+
+```
