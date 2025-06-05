@@ -17,8 +17,11 @@ library(tidycensus)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(sf)
 
 #census_api_key("", install = TRUE)
+
+options(tigris_use_cache = TRUE)
 
 ny_counties <- c("Bronx","Kings", "Queens", "Nassau", "Suffolk")
 
@@ -29,6 +32,10 @@ ma_counties <- c("Suffolk", "Bristol","Middlesex", "Norfolk", "Plymouth")
 load the variables of interest. you can search for others using
 
 acs23_vars \<- load_variables(2023, "acs5", cache = TRUE)
+
+```{r}
+acs23_vars <- load_variables(2023, "acs5", cache = TRUE)
+```
 
 View variables using View(variables) in Rstudio. You can use the interactive search box to search for variables of interest.
 
@@ -54,6 +61,9 @@ xtab_vars <- c("B01001_001","B01001_002","B01001_003","B01001_004","B01001_005",
 race_vars <- c("B02001_001", "B02001_002", "B02001_003", "B02001_004", "B02001_005", "B02001_006", "B02001_007", "B02001_008")
 
 hisp_vars <- c("B01003_001","B03002_012","B03002_001","B03002_002", "B03002_012")
+
+# Store all the variable lists in a list of lists
+variable_lists <- list(pop_vars, race_vars, xtab_vars, income_vars)
 
 ```
 
